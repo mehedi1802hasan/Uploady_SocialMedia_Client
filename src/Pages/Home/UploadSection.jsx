@@ -15,7 +15,7 @@ const UploadSection = () => {
             textarea,imageUrl
           }
           console.log(addMedia)
-          fetch('http://localhost:4000/media',{
+          fetch('https://socile-media-server-mm0pmc2ou-mehedi1802hasan.vercel.app/media',{
               method:"POST",
               headers:{
                   'content-type':'application/json'
@@ -39,22 +39,26 @@ const UploadSection = () => {
 
     }
     return (
-        <form onSubmit={handleSubmit} className='my-16'>
+      <div className='w-96 mx-auto '>
+          <form onSubmit={handleSubmit} className='my-16 shadow-md shadow-orange-100 px-16 py-7'>
 
 
-            <div>
-                <textarea placeholder="enter the text" name='textarea' className="textarea textarea-bordered textarea-sm w-full max-w-xs" required ></textarea>
-            </div>
-            <div className='flex my-5'>
-                <h3 className='border-2 border-green-500 rounded-3xl'>Image link</h3>
-            <input type="text"  className='border-blue-500 border-2' name="image"  required />
+<div> <h3>Text:</h3>
+    <textarea placeholder="enter the text" name='textarea' className="textarea textarea-bordered textarea-sm w-full max-w-xs" required ></textarea>
+</div>
+<div className=''>
+    <h3 className=''>image link:</h3>
+    <input type="text" name="image" placeholder="enter the image link" className="input input-bordered w-full max-w-xs" required/>
 
-            </div>
-            <div className='hidden'>
-                <input type="file" className="file-input file-input-bordered file-input-warning w-full max-w-xs" />
-            </div>
-            <button className='btn btn-outline btn-secondary' type='submit'>Submit</button>
-        </form>
+{/* <input type="text"  className='border-blue-500 border-2' name="image"  required /> */}
+
+</div>
+{/* <div className='hidden'>
+    <input type="file" className="file-input file-input-bordered file-input-warning w-full max-w-xs" />
+</div> */}
+<button className='btn btn-outline btn-md my-4' type='submit'>Submit</button>
+</form>
+      </div>
 
     );
 };
