@@ -15,7 +15,7 @@ const UploadSection = () => {
             textarea,imageUrl
           }
           console.log(addMedia)
-          fetch('http://localhost:3000/media',{
+          fetch('http://localhost:4000/media',{
               method:"POST",
               headers:{
                   'content-type':'application/json'
